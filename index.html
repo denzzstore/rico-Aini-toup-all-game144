@@ -220,4 +220,288 @@ body{margin:0;background:#05050a;font-family:Inter,-apple-system,sans-serif;padd
 #rag .gpn svg{display:block;margin-left:auto}
 #rag .gpn span{font-family:Orbitron;font-size:9px;font-weight:900;color:#12447e;letter-spacing:.5px}
 #rag .qstore{text-align:center;position:relative;z-index:2;margin-top:2px}
-#rag .qstore b{display:block;font-size:14px;letter-spacin
+#rag .qstore b{display:block;font-size:14px;letter-spacing:1px;color:#111;font-weight:700}
+#rag .qstore i{display:block;font-style:normal;font-size:9.5px;color:#333;margin-top:3px;letter-spacing:.4px}
+#rag .qbox{display:grid;place-items:center;padding:8px 0 4px;position:relative;z-index:2}
+#rag .qfoot{text-align:center;font-size:7.5px;color:#444;line-height:1.4;position:relative;z-index:2;padding-bottom:2px}
+#rag .qfoot b{color:#111;font-size:8px}
+
+#rag .okwrap{text-align:center;padding:6px 0 2px}
+#rag .okwrap .cir{width:58px;height:58px;margin:0 auto 10px;border-radius:50%;display:grid;place-items:center;border:1px solid rgba(61,220,132,.5);background:rgba(61,220,132,.1)}
+#rag .okwrap h5{margin:0 0 4px;font-family:Orbitron;font-size:13px;color:var(--ok)}
+#rag .okwrap p{margin:0;font-size:11px;color:var(--muted);line-height:1.5}
+#rag .oid{margin:12px 0;background:var(--panel);border:1px dashed rgba(232,194,92,.4);border-radius:10px;padding:10px;font-family:ui-monospace,monospace;font-size:13px;color:var(--gold2);letter-spacing:1px;text-align:center}
+
+#rag .adm{display:grid;gap:8px;margin-bottom:12px}
+#rag .admb{display:flex;align-items:center;gap:10px;background:var(--panel);border:1px solid rgba(61,220,132,.35);border-radius:11px;padding:10px 11px;cursor:pointer;transition:.18s}
+#rag .admb:hover{background:rgba(61,220,132,.1);border-color:var(--ok)}
+#rag .admb .av{width:30px;height:30px;border-radius:9px;display:grid;place-items:center;font-size:11px;font-weight:800;color:#04220f;background:linear-gradient(140deg,#8ff0bb,#128a4d)}
+#rag .admb b{display:block;font-size:12px}
+#rag .admb span{font-size:10px;color:var(--muted);font-family:ui-monospace,monospace}
+#rag .admb svg{margin-left:auto;fill:#3ddc84}
+#rag .pv{font-size:10px;color:#8f8b9a;background:rgba(255,255,255,.03);border:1px dashed rgba(255,255,255,.12);border-radius:9px;padding:9px;line-height:1.5;margin-bottom:12px;max-height:110px;overflow:hidden}
+
+#rag .toast{position:fixed;left:50%;bottom:20px;transform:translateX(-50%) translateY(20px);background:#16161f;border:1px solid rgba(232,194,92,.4);color:var(--gold2);font-size:11px;padding:9px 15px;border-radius:9px;opacity:0;transition:.3s;z-index:99;pointer-events:none;white-space:nowrap}
+#rag .toast.on{opacity:1;transform:translateX(-50%) translateY(0)}
+</style>
+</head>
+<body>
+
+<div id="rag">
+  <div class="strip">
+    <span><span class="dot"></span>Server online · proses otomatis 3 detik</span>
+    <span><b>1.284</b> transaksi hari ini</span>
+    <span>Garansi 100% aman</span>
+  </div>
+
+  <header>
+    <div class="logo">
+      <div class="mark">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#e8c25c" stroke-width="1.7" stroke-linejoin="round">
+          <path d="M12 2.5l8 3.5v6.6c0 5.3-4 8.6-8 10.9-4-2.3-8-5.6-8-10.9V6z"/>
+          <path d="M12 8v5m0 3h.01" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div>
+        <h1 class="gold">RICO&amp;AINI</h1>
+        <span>TOUP GAME</span>
+      </div>
+    </div>
+    <div class="hbtns">
+      <button class="cs" onclick="pickAdmin('Halo admin Rico&Aini, saya mau tanya-tanya dulu.')">
+        <svg width="12" height="12" viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.5 15.2L2 22l4.9-1.4A10 10 0 1 0 12 2zm0 18a8 8 0 0 1-4.1-1.1l-.3-.2-2.9.8.8-2.8-.2-.3A8 8 0 1 1 12 20z"/></svg>
+        Chat admin
+      </button>
+    </div>
+  </header>
+
+  <nav id="nav">
+    <button class="on" data-cat="all">Semua game</button>
+    <button data-cat="moba">MOBA</button>
+    <button data-cat="fps">FPS</button>
+    <button data-cat="rpg">RPG</button>
+    <button data-cat="sosial">Sosial</button>
+    <button class="akun" onclick="document.getElementById('shead-akun').scrollIntoView({behavior:'smooth'})">Beli akun</button>
+  </nav>
+
+  <div class="hero">
+    <span class="kick">★ TOP UP RESMI &amp; TERMURAH</span>
+    <h2 class="disp">Isi diamond <span class="gold">tanpa ribet</span>, masuk otomatis.</h2>
+    <p>Rico&amp;Aini Toup Game — layanan top up premium 24 jam. Harga bersahabat, proses kilat, dan dukungan admin sungguhan.</p>
+    <div class="row">
+      <button class="btn-gold" onclick="document.getElementById('shead-game').scrollIntoView({behavior:'smooth'})">Mulai top up</button>
+      <button class="btn-ghost" onclick="document.getElementById('shead-akun').scrollIntoView({behavior:'smooth'})">Beli akun</button>
+    </div>
+    <div class="stars">★★★★★<br>4.9 · 18.402 ulasan</div>
+  </div>
+
+  <div class="search">
+    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#7b7787" stroke-width="1.9" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.6-3.6"/></svg>
+    <input id="q" placeholder="Cari game favoritmu..." oninput="render()">
+  </div>
+
+  <div class="shead" id="shead-game"><h3>Pilih game</h3><div class="ln"></div><small id="count">12 judul</small></div>
+  <div class="grid" id="grid"></div>
+
+  <div class="shead" id="shead-akun"><h3>Akun siap beli</h3><div class="ln"></div><small id="stok">5 akun</small></div>
+  <div class="akunwrap">
+    <div class="akun">
+      <div class="ribbon">GARANSI 30 HARI</div>
+      <div class="top">
+        <div class="lbltop">MOBILE LEGENDS · AKUN ADMIN</div>
+        <h4>Akun Moonton — Log All Kos</h4>
+        <div class="sub">Koleksi skin lengkap, siap pakai, aman.</div>
+      </div>
+      <div class="shot big">
+        <div class="mock">
+          <div class="skin" style="background:linear-gradient(160deg,#6a2bb5,#20103c)"><span>LEGEND</span></div>
+          <div class="skin" style="background:linear-gradient(160deg,#c9781f,#3a1d05)"><span>EPIC</span></div>
+          <div class="skin" style="background:linear-gradient(160deg,#b8123a,#320510)"><span>LEGEND</span></div>
+          <div class="skin" style="background:linear-gradient(160deg,#c22a6a,#33081f)"><span>KISHIN</span></div>
+          <div class="skin" style="background:linear-gradient(160deg,#8a6a12,#2a1f04)"><span>COLLECTOR</span></div>
+          <div class="skin" style="background:linear-gradient(160deg,#a1622a,#2f1a05)"><span>COLLECTOR</span></div>
+          <div class="skin" style="background:linear-gradient(160deg,#9c1140,#2b0412)"><span>COLLECTOR</span></div>
+          <div class="skin" style="background:linear-gradient(160deg,#1f6fae,#062033)"><span>COLLECTOR</span></div>
+        </div>
+        <img src="assets/akun-1.jpg" alt="Koleksi akun Mobile Legends" onerror="this.style.display='none'">
+        <span class="stamp">287/1140 skin · Kolektor Terhormat V</span>
+      </div>
+      <div class="facts">
+        <div class="fact"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#3ddc84" stroke-width="2.4" stroke-linecap="round"><path d="M4 12.5l5 5L20 6.5"/></svg><span>Full log Moonton, all kos — data akun diberikan lengkap saat serah terima</span></div>
+        <div class="fact"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#3ddc84" stroke-width="2.4" stroke-linecap="round"><path d="M4 12.5l5 5L20 6.5"/></svg><span>Akun admin, bukan akun abal-abal</span></div>
+        <div class="fact"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#3ddc84" stroke-width="2.4" stroke-linecap="round"><path d="M4 12.5l5 5L20 6.5"/></svg><span>Bergaransi 30 hari penuh — kena tarik, diganti</span></div>
+        <div class="fact"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#3ddc84" stroke-width="2.4" stroke-linecap="round"><path d="M4 12.5l5 5L20 6.5"/></svg><span>Bisa ganti email &amp; nomor setelah serah terima</span></div>
+      </div>
+      <div class="buy">
+        <div class="price"><b>Rp 480.000</b><s>Rp 650.000</s><em>HEMAT 26%</em></div>
+        <button class="btn-wa" onclick="buyAkun(1)">
+          <svg width="16" height="16" viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.5 15.2L2 22l4.9-1.4A10 10 0 1 0 12 2zm0 18a8 8 0 0 1-4.1-1.1l-.3-.2-2.9.8.8-2.8-.2-.3A8 8 0 1 1 12 20zm4.4-5.9c-.2-.1-1.4-.7-1.6-.8s-.4-.1-.5.1l-.7.9c-.1.2-.3.2-.5.1a6.5 6.5 0 0 1-3.2-2.8c-.1-.2 0-.4.1-.5l.6-.7c.1-.2.1-.3 0-.5l-.7-1.6c-.1-.3-.3-.3-.5-.3h-.5c-.2 0-.5.1-.7.3-.6.6-.8 1.4-.6 2.2.4 1.6 1.5 3 3 3.9 1 .6 2 1 3.1 1 .7 0 1.4-.3 1.9-.9.2-.2.3-.5.3-.8 0-.1 0-.2-.1-.3z"/></svg>
+          Beli akun via WhatsApp
+        </button>
+        <div class="note">Klik tombol → pilih admin. Pembayaran &amp; serah terima diurus manual lewat WhatsApp.</div>
+      </div>
+    </div>
+
+    <div class="agrid" id="agrid"></div>
+  </div>
+
+  <div class="shead"><h3>Promo hari ini</h3><div class="ln"></div></div>
+  <div class="promos">
+    <div class="promo a">
+      <strong>Diskon 10% semua diamond</strong>
+      <span>Min. transaksi Rp 20.000</span>
+      <span class="kode">RICO10</span>
+    </div>
+    <div class="promo b">
+      <strong>Cashback Rp 5.000</strong>
+      <span>Khusus pembayaran QRIS</span>
+      <span class="kode">QRISBALIK</span>
+    </div>
+  </div>
+
+  <div class="shead"><h3>Cara top up</h3><div class="ln"></div></div>
+  <div class="steps">
+    <div class="step"><div class="num">1</div><div><b>Pilih game &amp; nominal</b><span>Tentukan jumlah diamond yang kamu butuhkan.</span></div></div>
+    <div class="step"><div class="num">2</div><div><b>Masukkan ID lalu cek</b><span>Sistem menampilkan nickname supaya ID terbukti benar.</span></div></div>
+    <div class="step"><div class="num">3</div><div><b>Bayar &amp; konfirmasi</b><span>Sudah bayar? Kirim struk ke admin lewat tombol chat.</span></div></div>
+  </div>
+
+  <div class="shead"><h3>Metode pembayaran</h3><div class="ln"></div></div>
+  <div class="pays">
+    <span class="pay" style="color:#4c8dff">DANA</span>
+    <span class="pay" style="color:#a97bff">OVO</span>
+    <span class="pay" style="color:#3ddc84">GoPay</span>
+    <span class="pay" style="color:#ff8a3d">ShopeePay</span>
+    <span class="pay" style="color:#e8c25c">QRIS</span>
+    <span class="pay" style="color:#7fb8ff">BCA</span>
+    <span class="pay" style="color:#f2d06b">Mandiri</span>
+    <span class="pay" style="color:#ff4d6d">Indomaret</span>
+  </div>
+
+  <div class="shead"><h3>Kenapa di sini</h3><div class="ln"></div></div>
+  <div class="stats">
+    <div class="stat"><b>3 detik</b><span>RATA-RATA PROSES</span></div>
+    <div class="stat"><b>24 jam</b><span>ADMIN ONLINE</span></div>
+    <div class="stat"><b>0%</b><span>BIAYA LAYANAN</span></div>
+  </div>
+
+  <div class="shead"><h3>Kata pembeli</h3><div class="ln"></div></div>
+  <div class="revs">
+    <div class="rev">
+      <div class="top"><div class="av">DA</div><div class="nm">Dimas A.</div><div class="st">★★★★★</div></div>
+      <p>Baru bayar langsung masuk diamondnya, admin fast respon juga. Fix langganan di sini.</p>
+    </div>
+    <div class="rev">
+      <div class="top"><div class="av">SR</div><div class="nm">Sari R.</div><div class="st">★★★★★</div></div>
+      <p>Tampilan webnya rapi, nggak bingung mau isi apa. Harga paling murah dari yang lain.</p>
+    </div>
+    <div class="rev">
+      <div class="top"><div class="av">AP</div><div class="nm">Agus P.</div><div class="st">★★★★☆</div></div>
+      <p>Sudah 6 kali transaksi, aman semua. Struknya juga tersimpan jadi gampang dicek.</p>
+    </div>
+  </div>
+
+  <footer>
+    <div class="fgrid">
+      <div><div class="ftitle">LAYANAN</div><a href="#" onclick="toast('Halaman cara order');return false">Cara order</a><a href="#" onclick="toast('Halaman cek pesanan');return false">Cek pesanan</a><a href="#" onclick="toast('Halaman refund');return false">Kebijakan refund</a></div>
+      <div><div class="ftitle">BANTUAN</div><a href="#" onclick="pickAdmin('Halo admin, saya butuh bantuan.');return false">WhatsApp admin</a><a href="#" onclick="toast('Email: cs@ricoaini.game');return false">Email CS</a><a href="#" onclick="toast('FAQ dibuka');return false">FAQ</a></div>
+      <div><div class="ftitle">SOSIAL</div><a href="#" onclick="toast('Instagram @ricoaini.toup');return false">Instagram</a><a href="#" onclick="toast('TikTok @ricoaini.toup');return false">TikTok</a><a href="#" onclick="toast('Discord Rico&Aini');return false">Discord</a></div>
+    </div>
+    <div class="fbot">
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#e8c25c" stroke-width="1.7"><path d="M12 2.5l8 3.5v6.6c0 5.3-4 8.6-8 10.9-4-2.3-8-5.6-8-10.9V6z"/></svg>
+      <span>© 2026 Rico&amp;Aini Toup Game · Bukan situs resmi publisher game.</span>
+    </div>
+  </footer>
+
+  <div class="ov" id="ov" onclick="if(event.target===this)closeMod()">
+    <div class="mod" id="mod"></div>
+  </div>
+  <div class="ov" id="aov" onclick="if(event.target===this)closeAdmin()">
+    <div class="mod"><div class="mhead"><div><h4>Pilih admin</h4><small>Dua admin aktif 24 jam</small></div><button class="x" onclick="closeAdmin()">✕</button></div><div class="mbody" id="amod"></div></div>
+  </div>
+  <div class="toast" id="toast"></div>
+</div>
+
+<script>
+/* ====== NOMOR ADMIN ====== */
+const ADMINS=[
+  {n:'Rico',num:'6281997157560'},
+  {n:'Aini',num:'6281937164487'}
+];
+/* ========================= */
+
+function waTo(num,text){window.open('https://wa.me/'+num+(text?'?text='+encodeURIComponent(text):''),'_blank');}
+let _msg='';
+function pickAdmin(text){
+ _msg=text||'Halo admin Rico&Aini.';
+ document.getElementById('amod').innerHTML=
+ '<div class="pv">'+_msg.replace(/\n/g,'<br>')+'</div><div class="adm">'+
+ ADMINS.map(a=>'<div class="admb" onclick="goAdmin(\''+a.num+'\')"><div class="av">'+a.n[0]+'</div><div><b>'+a.n+'</b><span>+'+a.num+'</span></div>'+
+ '<svg width="15" height="15" viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.5 15.2L2 22l4.9-1.4A10 10 0 1 0 12 2zm0 18a8 8 0 0 1-4.1-1.1l-.3-.2-2.9.8.8-2.8-.2-.3A8 8 0 1 1 12 20z"/></svg></div>').join('')+
+ '</div><div style="font-size:9.5px;color:#7d7889;text-align:center">Pesan sudah terisi otomatis, tinggal kirim.</div>';
+ document.getElementById('aov').classList.add('on');
+}
+function closeAdmin(){document.getElementById('aov').classList.remove('on');}
+function goAdmin(num){closeAdmin();waTo(num,_msg);}
+
+/* ====== DATA AKUN ====== */
+const AKUN=[
+ {id:2,title:'Akun Mythic Glory 480 Skin',lbl:'MOBILE LEGENDS · SIAP PAKAI',price:1250000,old:1600000,rib:'GARANSI 14 HARI',stamp:'480/1140 skin · Mythic Glory',
+  facts:['Rank Mythic Glory, win rate 71%','480+ skin termasuk 12 Collector','Full log + email baru']},
+ {id:3,title:'Akun Legend Full Emblem',lbl:'MOBILE LEGENDS · KOLEKSI LENGKAP',price:2100000,old:2600000,rib:'GARANSI 30 HARI',stamp:'640/1140 skin · Kolektor Terhormat I',
+  facts:['640+ skin, Legend & Collector','Semua role hero lengkap','Emblem full level 60']},
+ {id:4,title:'Akun Sultan Starter',lbl:'MOBILE LEGENDS · HEMAT',price:275000,old:350000,rib:'GARANSI 7 HARI',stamp:'120/1140 skin · Legend',
+  facts:['120+ skin Epic & Special','Rank Legend, akun bersih','Login Moonton aktif']},
+ {id:5,title:'Akun Collector Lengkap',lbl:'MOBILE LEGENDS · PREMIUM',price:1750000,old:2200000,rib:'GARANSI 30 HARI',stamp:'395/1140 skin · Kolektor Terhormat III',
+  facts:['28 skin Collector langka','Rank Mythical Honor','Full log, aman selamanya']}
+];
+function akunCard(a){
+ return '<div class="akun"><div class="ribbon">'+a.rib+'</div>'+
+ '<div class="top"><div class="lbltop">'+a.lbl+'</div><h4>'+a.title+'</h4><div class="sub">Akun admin, siap pakai.</div></div>'+
+ '<div class="shot sm"><div class="mock">'+
+  '<div class="skin" style="background:linear-gradient(160deg,#6a2bb5,#20103c)"><span>LEGEND</span></div>'+
+  '<div class="skin" style="background:linear-gradient(160deg,#8a6a12,#2a1f04)"><span>COLL</span></div>'+
+  '<div class="skin" style="background:linear-gradient(160deg,#b8123a,#320510)"><span>LEGEND</span></div>'+
+  '<div class="skin" style="background:linear-gradient(160deg,#1f6fae,#062033)"><span>COLL</span></div></div>'+
+ '<img src="assets/akun-'+a.id+'.jpg" alt="'+a.title+'" onerror="this.style.display=\'none\'">'+
+ '<span class="stamp">'+a.stamp+'</span></div>'+
+ '<div class="facts">'+a.facts.map(f=>'<div class="fact"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#3ddc84" stroke-width="2.6" stroke-linecap="round"><path d="M4 12.5l5 5L20 6.5"/></svg><span>'+f+'</span></div>').join('')+'</div>'+
+ '<div class="buy"><div class="price"><b>Rp '+a.price.toLocaleString('id-ID')+'</b><s>Rp '+a.old.toLocaleString('id-ID')+'</s></div>'+
+ '<button class="btn-wa" onclick="buyAkun('+a.id+')">Beli via WhatsApp</button></div></div>';
+}
+document.getElementById('agrid').innerHTML=AKUN.map(akunCard).join('');
+document.getElementById('stok').textContent=(AKUN.length+1)+' akun';
+
+function buyAkun(id){
+ let a;
+ if(id===1){a={title:'Akun Moonton - Log All Kos',price:480000,rib:'Garansi 30 hari'};}
+ else{const x=AKUN.find(y=>y.id===id);a={title:x.title,price:x.price,rib:x.rib};}
+ pickAdmin('Halo admin Rico&Aini, saya mau BELI AKUN.\n\nProduk: '+a.title+'\nHarga: Rp '+a.price.toLocaleString('id-ID')+'\n'+a.rib+'\n\nApakah stok masih ada?');
+}
+
+const GAMES=[
+ {id:'mlbb',n:'Mobile Legends',cur:'Diamond',cat:'moba',tag:'Terlaris',cls:'hot',unit:290,a:[5,12,19,36,74,172,257,355],c1:'#1c3f96',c2:'#0a1738',e:'shield',z:true},
+ {id:'ff',n:'Free Fire',cur:'Diamond',cat:'fps',tag:'Instan',cls:'fast',unit:270,a:[5,12,19,36,74,172,257,355],c1:'#b8480f',c2:'#3a1204',e:'flame'},
+ {id:'pubgm',n:'PUBG Mobile',cur:'UC',cat:'fps',tag:'Populer',cls:'hot',unit:300,a:[60,120,240,385,660,1320],c1:'#8a6a12',c2:'#2a1f04',e:'cross'},
+ {id:'gi',n:'Genshin Impact',cur:'Genesis',cat:'rpg',tag:'Resmi',cls:'fast',unit:330,a:[60,300,980,1980,3280,6480],c1:'#1a6f8c',c2:'#062430',e:'star4'},
+ {id:'hsr',n:'Honkai Star Rail',cur:'Oneiric',cat:'rpg',unit:340,a:[60,300,980,1980,3280],c1:'#4a2f9c',c2:'#150a30',e:'star8'},
+ {id:'valo',n:'Valorant',cur:'Points',cat:'fps',tag:'Baru',cls:'nw',unit:180,a:[125,250,420,700,1375,2400],c1:'#a11c2c',c2:'#2b0508',e:'vee'},
+ {id:'codm',n:'COD Mobile',cur:'CP',cat:'fps',unit:230,a:[80,160,400,800,2000],c1:'#3d4551',c2:'#101418',e:'cross'},
+ {id:'roblox',n:'Roblox',cur:'Robux',cat:'sosial',tag:'Cepat',cls:'fast',unit:320,a:[80,160,400,800,1700],c1:'#8f1a1a',c2:'#2a0606',e:'sq'},
+ {id:'coc',n:'Clash of Clans',cur:'Gem',cat:'moba',unit:350,a:[80,500,1200,2500,6500],c1:'#7a5216',c2:'#241704',e:'castle'},
+ {id:'aov',n:'Arena of Valor',cur:'Voucher',cat:'moba',unit:250,a:[70,140,350,700,1400],c1:'#0f5f7a',c2:'#03181f',e:'wing'},
+ {id:'zzz',n:'Zenless Zone Zero',cur:'Monochrome',cat:'rpg',tag:'Baru',cls:'nw',unit:360,a:[60,300,980,1980],c1:'#1f9c8a',c2:'#04211d',e:'bolt'},
+ {id:'wuwa',n:'Wuthering Waves',cur:'Lunacy',cat:'rpg',unit:355,a:[60,300,980,1980],c1:'#2f6fa8',c2:'#071a2a',e:'wave'}
+];
+const EMB={
+ shield:'<path d="M28 3l21 9v16c0 13-10 21-21 26-11-5-21-13-21-26V12z"/>',
+ flame:'<path d="M28 2c10 10 18 16 18 27a18 18 0 1 1-36 0c0-11 8-17 18-27z"/>',
+ cross:'<circle cx="28" cy="28" r="16" fill="none" stroke-width="3"/><path d="M28 4v10M28 42v10M4 28h10M42 28h10" stroke-width="3"/>',
+ star4:'<path d="M28 2l6 18 18 6-18 6-6 18-6-18-18-6 18-6z"/>',
+ star8:'<path d="M28 2l6 16 12-10-4 16 16 4-16 4 4 16-12-10-6 16-6-16-12 10 4-16-16-4 16-4-4-16 12 10z"/>',
+ vee:'<path d="M4 8h12l12 26 12-26h12L34 52H22z"/>',
+ sq:'<rect x="8" y="8" width="40" height="40" rx="8" fill="none" stroke-width="4"/><rect x="21" y="21" width="14" height="14" rx="3"/>',
+ castle:'<path d="M6 52V20h9v8h8v-8h10v8h8v-8h9v32z"/>',
+ wing:'<path d="M2 44c12 4 20-4 26-16 6 12 14 20 26 16-4 8-14 12-26 12S6 52 2 44z"/>',
+ bolt:'<path d="M32 2L10 32h13l-5 22 22-32H27z"/>',
+ wave:'<path d="M2 22c8-8
